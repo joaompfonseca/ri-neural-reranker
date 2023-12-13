@@ -17,8 +17,6 @@ class Evaluator:
         # Load results
         self.results = {}
         for r in [json.loads(l) for l in open(self.results_file)]:
-            tuples = [(doc, score) for doc, score in r["scores"].items()]
-            tuples.sort(key=lambda x: x[1], reverse=True)  # Sort by score
             self.results[r["question"]] = {
                 "docs": [doc["id"] for doc in r["documents"]],
             }
@@ -57,12 +55,6 @@ class Evaluator:
 
         return tp / (tp + fn)
 
-    def f_measure(self, precision: float, recall: float):
-        if (precision + recall) == 0:
-            return 0.0
-
-        return 2 * (recall * precision) / (recall + precision)
-
     def average_precision(self, question_docs: list, result_docs: list):
         """
         Considering the lists of documents are ordered by the ranking
@@ -73,7 +65,7 @@ class Evaluator:
 
         R = len(result_docs)
         precisions = []
-        for k in range(1, R):
+        for k in range(1, R + 1):
             if k > len(question_docs):
                 break  # No more relevant documents
             if result_docs[k - 1] == question_docs[k - 1]:  # Document k is relevant
@@ -85,20 +77,32 @@ class Evaluator:
 
         return sum(precisions) / Q
 
+    def mean_average_precision(self, question_docs: list, result_docs: list, k: int):
+        """
+        Considering the lists of documents are ordered by the ranking
+        - Calculate the average precision of the first k = 1, ..., R retrieved documents, where R = len(result_docs).
+        - Return the average precision values for each k.
+        """
+        R = len(result_docs)
+        ap_values = []
+        for k in range(1, R + 1):
+            ap_values += [self.average_precision(question_docs, result_docs[:k])]
+        return sum(ap_values) / R
+
     def discounted_cumulative_gain(
-        self, question_docs: list, result_docs: list, k_values: list
+        self, question_docs: list, result_docs: list, k: int
     ):
         """
         Considering the lists of documents are ordered by the ranking
         - The relevance of a document is 1 if it is relevant, 0 otherwise.
         - Calculate the DCG of the first k = 1, ..., R retrieved documents, where R = len(result_docs).
-        - Return the DCG values for each k.
+        - Return the DCG value for k.
         """
         R = len(result_docs)
 
         dcg_values = []
 
-        for k in range(1, R):
+        for k in range(1, R + 1):
             relevance_k = 1 if result_docs[k - 1] in question_docs else 0
             if k == 1:
                 dcg_values += [relevance_k]
@@ -107,32 +111,39 @@ class Evaluator:
 
         dcg = [sum(dcg_values[: k + 1]) for k in range(R)]  # DCG is a cumulative sum
 
-        res = []
-        for k in k_values:
-            if k > len(dcg):
-                res += [dcg[-1]]
-            else:
-                res += [dcg[k - 1]]
-        return res
+        if k > len(dcg):
+            return dcg[-1]
+        else:
+            return dcg[k - 1]
 
-    def query_throughput(self):
+    def normalized_discounted_cumulative_gain(
+        self, question_docs: list, result_docs: list, k: int
+    ):
         """
-        The query throughput is the number of queries per second.
+        Considering the lists of documents are ordered by the ranking
+        - The relevance of a document is 1 if it is relevant, 0 otherwise.
+        - Calculate the NDCG of the first k = 1, ..., R retrieved documents, where R = len(result_docs).
+        - Return the NDCG value for k.
         """
-        return len(self.questions) / sum(
-            [self.results[q]["time"] for q in self.results.keys()]
-        )
+        dcg = self.discounted_cumulative_gain(question_docs, result_docs, k)
+        idcg = self.discounted_cumulative_gain(question_docs, question_docs, k)
+        return dcg / idcg
 
-    def median_query_latency(self):
+    def mean_reciprocal_rank(self, question_docs: list, result_docs: list, k: int):
         """
-        The median query latency is the median time to process a query.
+        Considering the lists of documents are ordered by the ranking
+        - Calculate the reciprocal rank of the first k = 1, ..., R retrieved documents, where R = len(result_docs).
+        - Return the reciprocal rank value for k.
         """
-        return sorted([self.results[q]["time"] for q in self.results.keys()])[
-            len(self.results) // 2
-        ]
+        R = len(result_docs)
+
+        for k in range(1, R + 1):
+            if result_docs[k - 1] in question_docs:
+                return 1 / k
+
+        return 0.0
 
     def evaluate(self):
-        
         query_header = [
             "query",
             "map@10",  # Mean Average Precision
@@ -149,20 +160,32 @@ class Evaluator:
             q_docs = self.questions[query]["docs"]
             r_docs = self.results[query]["docs"]
 
-            d += [self.mean_average_precision(q_docs[:10], r_docs[:10])]
-            d += [self.recall(q_docs[:10], r_docs[:10])]
-            d += [self.normalized_discounted_cumulative_gain(q_docs, r_docs, [100])[0]]
-            d += [self.mean_reciprocal_rank(q_docs, r_docs)]
-            
-            query_data.append(d)
-            
-        self.save_metrics(query_header, query_data)
+            d += [self.mean_average_precision(q_docs, r_docs, 10)]
+            d += [self.recall(q_docs, r_docs[:10])]
+            d += [self.normalized_discounted_cumulative_gain(q_docs, r_docs, 100)]
+            d += [self.mean_reciprocal_rank(q_docs, r_docs, 10)]
 
-    def save_metrics(self, query_header, query_data):
+            query_data.append(d)
+
+        global_header = [
+            "avg_map@10",
+            "avg_recall@10",
+            "avg_ndcg@100",
+            "avg_mrr@10",
+        ]
+
+        global_data = []
+        # Average metrics
+        for i in range(1, len(query_header)):  # Skip query column
+            global_data += [sum([d[i] for d in query_data]) / len(query_data)]
+
+        self.save_metrics(query_header, query_data, global_header, global_data)
+
+    def save_metrics(self, query_header, query_data, global_header, global_data):
         # Per query results in CSV
         path = os.path.join(
             self.output_folder,
-            f"queries_{self.questions_file.split('/')[-1].split('.')[0]}.csv",
+            f"{self.results_file.split('/')[-1].split('.')[0]}.csv",
         )
         with open(path, "w") as f:
             f.write(";".join(query_header) + "\n")
@@ -172,7 +195,7 @@ class Evaluator:
         # Per query results in MD
         path = os.path.join(
             self.output_folder,
-            f"queries_{self.questions_file.split('/')[-1].split('.')[0]}.md",
+            f"{self.results_file.split('/')[-1].split('.')[0]}.md",
         )
         with open(path, "w") as f:
             f.write("| " + " | ".join(query_header) + " |\n")
@@ -180,10 +203,53 @@ class Evaluator:
             for d in query_data:
                 f.write("| " + " | ".join(map(str, d)) + " |\n")
 
+        # Global results in CSV
+        path = os.path.join(
+            self.output_folder,
+            f"global_{self.results_file.split('/')[-1].split('.')[0]}.csv",
+        )
+        with open(path, "w") as f:
+            f.write(";".join(global_header) + "\n")
+            f.write(";".join(map(str, global_data)) + "\n")
+
+        # Global results in MD
+        path = os.path.join(
+            self.output_folder,
+            f"global_{self.results_file.split('/')[-1].split('.')[0]}.md",
+        )
+        with open(path, "w") as f:
+            f.write("| " + " | ".join(global_header) + " |\n")
+            f.write("| " + " | ".join(["---"] * len(global_header)) + " |\n")
+            f.write("| " + " | ".join(map(str, global_data)) + " |\n")
+
+
 if __name__ == "__main__":
+    # Evaluate BM25 results
     e = Evaluator(
         "data/question_E8B1_gs.jsonl",
         "data/BM25_E8B1.jsonl",
         "eval/BM25_E8B1",
+    )
+    e.evaluate()
+
+    e = Evaluator(
+        "data/question_E8B2_gs.jsonl",
+        "data/BM25_E8B2.jsonl",
+        "eval/BM25_E8B2",
+    )
+    e.evaluate()
+
+    # Evaluate rerank results
+    e = Evaluator(
+        "data/question_E8B1_gs.jsonl",
+        "data/BM25_E8B1_rerank.jsonl",
+        "eval/BM25_E8B1",
+    )
+    e.evaluate()
+
+    e = Evaluator(
+        "data/question_E8B2_gs.jsonl",
+        "data/BM25_E8B2_rerank.jsonl",
+        "eval/BM25_E8B2",
     )
     e.evaluate()
