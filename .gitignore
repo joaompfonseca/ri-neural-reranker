@@ -1,2 +1,3 @@
-data/pubmed_2022_tiny.jsonl.gz
+data/pubmed_2022_*
 data/RI_2023_training_data_wContents.jsonl
+model*
