@@ -5,24 +5,16 @@ import random
 
 if __name__ == "__main__":
     # Load all documents into memory for negative sampling
-    all_docs = {} # doc_id -> doc_title + doc_abstract
-    with gzip.open("data/pubmed_2022_small.jsonl.gz", "r") as all_file:
+    all_docs = {}
+    with gzip.open("data/pubmed_2022_tiny.jsonl.gz", "r") as all_file:
         for i, line in enumerate(all_file):
             print(f"Loading {i} documents for negative sampling...", end="\r")
             doc = json.loads(line)
             all_docs[doc["pmid"]] = doc["title"] + " " + doc["abstract"]
+
+    all_ids_list = list(all_docs.keys())  # List of all document ids
     
     print()
-    
-    # Load BM25 runs over train dataset questions
-    bm25_runs = {}  # query_text -> list of doc_ids
-    with open("data/BM25_train.jsonl", "r") as bm25_file:
-        for i, line in enumerate(bm25_file):
-            print(f"Loading {i} BM25 runs...", end="\r")
-            data = json.loads(line)
-            bm25_runs[data["question"]] = [doc["id"] for doc in data["documents"]]
-    
-    print()    
     
     # Create the train dataset, each entry contains:
     # - 1 query
@@ -48,7 +40,7 @@ if __name__ == "__main__":
             # key: neg_docs (length=N)
             out["neg_docs"] = []
             while len(out["neg_docs"]) < N:
-                choice = bm25_runs[out["query"]].pop()
+                choice = random.choice(all_ids_list)
                 if choice not in pos_ids:
                     out["neg_docs"].append({"id": choice, "text": all_docs[choice]})
             
@@ -57,6 +49,6 @@ if __name__ == "__main__":
     print()
     
     # Save the dataset
-    with open("data/test_train_dataset.jsonl", "w") as out_file: # Change name to train_dataset.jsonl after testing
+    with open("data/train_dataset.jsonl", "w") as out_file:
         print(f"Saving the dataset...")
         [out_file.write(json.dumps(entry) + "\n") for entry in dataset]
