@@ -1,101 +1,101 @@
 query;map@10;recall@10;ndcg@100;mrr@10
-Does teplizumab hold promise for diabetes prevention?;0.029696969696969677;0.9090909090909091;0.9839336388615981;1.0
-What is another name for acid sphingomyelinase deficiency (ASMD)?;0.0;0.8;0.9907722616567439;1.0
+Does teplizumab hold promise for diabetes prevention?;0.04227272727272727;0.8181818181818182;0.9368512563748158;1.0
+What is another name for acid sphingomyelinase deficiency (ASMD)?;0.057599999999999915;0.9;0.9763624698971284;1.0
 What rare disease is associated with a mutation in the GPC6 gene on chromosome 13?;0.0;0.5;0.5;1.0
-What are 3 symptoms of Waardenburg Syndrome?;0.0;0.2;0.32691783322930745;0.1111111111111111
+What are 3 symptoms of Waardenburg Syndrome?;0.07680000000000005;0.6;0.48179470782747696;0.25
 Does ProSavin use an adenoviral vector?;0.0;1.0;1.0;0.5
-Does radiation for tinea capitis increases brain tumor risk?;0.0;0.4166666666666667;0.7671764896623513;0.5
-What gene is mutated in Huntington's Disease patients?;0.0;0.2;0.4799922339530673;1.0
-List types of cancer where Long intergenic nonprotein coding RNA p53-induced transcript (LINC-PINT) is involved;0.21777777777777732;0.6666666666666666;0.6199062332840657;0.5
-Is pimavanserin a typical antipsychotic?;0.0;1.0;0.6309297535714574;0.3333333333333333
+Does radiation for tinea capitis increases brain tumor risk?;0.0;0.5;0.8439195263195617;1.0
+What gene is mutated in Huntington's Disease patients?;0.0;0.3333333333333333;0.6561362967209068;1.0
+List types of cancer where Long intergenic nonprotein coding RNA p53-induced transcript (LINC-PINT) is involved;0.0;0.6666666666666666;0.6199062332840657;1.0
+Is pimavanserin a typical antipsychotic?;0.0;1.0;0.43067655807339306;0.2
 Can Flotillin be used as exosomal marker?;0.0;1.0;0.8154648767857287;0.5
-Which disease is treated with ZMapp?;0.023333333333333296;0.6428571428571429;0.9868877702729985;1.0
-How many genes belong to the KRAB-ZNF family in the human genome?;0.0;0.6666666666666666;0.7241922812766513;1.0
-Which molecule is targeted by Asciminib?;0.03166666666666665;1.0;1.0;1.0
-Please list 2 human diseases caused by a coronavirus.;0.0;0.1111111111111111;0.23152645019444906;0.14285714285714285
-What is characteristic to Fitz-Hugh–Curtis syndrome?;0.0;0.7692307692307693;0.9838211330201547;1.0
-What is the trade name of sildenafil?;0.0;1.0;0.38685280723454163;0.16666666666666666
-How large is the SARS-CoV  proteome?;0.0;0.5;0.3154648767857287;0.3333333333333333
-Is Apremilast effective for Behçet’s Syndrome?;0.0;0.75;0.7089719537333017;1.0
-Is Rad4/XPC a DNA damage sensing protein?;0.19138888888888875;1.0;0.9630596906229134;1.0
-List symptoms of the Hakim Triad?;0.1428571428571427;1.0;0.9800628421647485;1.0
-Is the protein ABCG2 transmembrane?;0.0;0.6666666666666666;0.42985934992609853;0.3333333333333333
-Can radiotherapy cause radiation induced osteosarcoma?;0.0;0.47619047619047616;0.9682809246307698;1.0
-What are manifestations of the Saint's Triad?;0.08952380952380938;0.7777777777777778;0.925334023638339;1.0
-What is the mechanism of action of Erdafitinib?;0.05134615384615374;0.6153846153846154;0.9657024990246933;1.0
-Are male or female persons more prone to autoimmunity?;0.0;0.125;0.27793551672347183;0.5
-Which is the phenotype of the disease fibrodysplasia ossificans progressiva?;0.0;0.3333333333333333;0.569018323505003;1.0
-Are lamina-associated domains (LADs) associated with transcriptional activation?;0.0;0.6666666666666666;0.5666779731932474;1.0
-Is Hemochromatosis type 4 is caused by a mutation in a recessive gene?;0.0;0.8;0.7501312133119783;1.0
-What is the purpose of the LINCS Project?;0.09899999999999981;0.6;0.5788417167007833;0.5
-Can Patient-derived organoids (PDOs) recapitulate patient responses in the clinic?;0.5;1.0;0.8154648767857287;1.0
-What is Fuchs' Uveitis?;0.0;1.0;0.7171809907403116;0.5
+Which disease is treated with ZMapp?;0.08202380952380942;0.6428571428571429;0.8727545568050369;0.5
+How many genes belong to the KRAB-ZNF family in the human genome?;0.09599999999999982;1.0;0.9577894409822412;1.0
+Which molecule is targeted by Asciminib?;0.06975000000000012;1.0;1.0;1.0
+Please list 2 human diseases caused by a coronavirus.;0.0;0.2222222222222222;0.3809153052400423;1.0
+What is characteristic to Fitz-Hugh–Curtis syndrome?;0.0;0.5384615384615384;0.8350771422746708;0.5
+What is the trade name of sildenafil?;0.0;1.0;1.0;0.5
+How large is the SARS-CoV  proteome?;0.0;0.5;0.5;1.0
+Is Apremilast effective for Behçet’s Syndrome?;0.0;1.0;0.9220433016555237;1.0
+Is Rad4/XPC a DNA damage sensing protein?;0.10555555555555535;1.0;0.7947403138395264;0.5
+List symptoms of the Hakim Triad?;0.0;1.0;0.9946862655200768;1.0
+Is the protein ABCG2 transmembrane?;0.16499999999999979;0.3333333333333333;0.48996550537618766;0.5
+Can radiotherapy cause radiation induced osteosarcoma?;0.0;0.47619047619047616;0.992479519948168;1.0
+What are manifestations of the Saint's Triad?;0.0;0.6666666666666666;0.8890910880529379;1.0
+What is the mechanism of action of Erdafitinib?;0.0;0.6153846153846154;0.8117183151937638;0.5
+Are male or female persons more prone to autoimmunity?;0.0;0.125;0.14003932573976166;0.16666666666666666
+Which is the phenotype of the disease fibrodysplasia ossificans progressiva?;0.0;0.6666666666666666;0.3686364953494449;0.2
+Are lamina-associated domains (LADs) associated with transcriptional activation?;0.0;0.6666666666666666;0.5875035377451501;1.0
+Is Hemochromatosis type 4 is caused by a mutation in a recessive gene?;0.0;0.8;0.8387049772774958;1.0
+What is the purpose of the LINCS Project?;0.0;0.6;0.5983058112302518;1.0
+Can Patient-derived organoids (PDOs) recapitulate patient responses in the clinic?;0.5;1.0;0.6781035935540111;1.0
+What is Fuchs' Uveitis?;0.16499999999999979;1.0;0.8099531166420328;0.5
 Is overexpression of LY6K associated with better prognosis for non-small cell lung cancer patients?;1.0;1.0;1.0;1.0
-Are the members of the KRAB-ZNF  gene family promoting gene repression?;0.0;0.4;0.40446146368887187;0.14285714285714285
-What does the boxed warning of pimavanserin say?;0.0;1.0;1.0;0.5
+Are the members of the KRAB-ZNF  gene family promoting gene repression?;0.0;0.4;0.5339659435993431;0.3333333333333333
+What does the boxed warning of pimavanserin say?;1.0;1.0;1.0;1.0
 List Cdk targets that are dephosphorylated during cytokinesis;1.0;1.0;1.0;1.0
-What is dystopia canthorum?;0.0;1.0;0.7055327815530772;1.0
-Is the protein ABCG2 (ATP-Binding Cassette, subfamily G, member 2, transporter) excreting uric acid?;0.0;0.0;0.1018975235452531;0.03333333333333333
-What is Heterochromia Iridis?;0.0;0.6666666666666666;0.6728564881005438;1.0
-How is transcriptional elongation affected by nucleosome positioning?;0.0;0.5;0.741623934147994;0.5
+What is dystopia canthorum?;0.0;1.0;0.9502344167898358;1.0
+Is the protein ABCG2 (ATP-Binding Cassette, subfamily G, member 2, transporter) excreting uric acid?;0.5;0.5;0.5;1.0
+What is Heterochromia Iridis?;0.0;0.6666666666666666;0.7197376843825414;1.0
+How is transcriptional elongation affected by nucleosome positioning?;0.08994047619047604;0.75;0.7495623987347717;1.0
 How many annotated conserved human lncRNAs come from ancestral protein-coding genes?;1.0;1.0;1.0;1.0
-Is modified vaccinia Ankara effective for smallpox?;0.0;0.23529411764705882;0.640950328550385;0.25
-Does nintedanib hold promise for lung disease associated with systemic sclerosis?;0.24709090909090875;0.7272727272727273;0.9344718262562238;1.0
-What is the LINCS Program?;0.13999999999999987;0.8571428571428571;0.9172509175420708;1.0
+Is modified vaccinia Ankara effective for smallpox?;0.0;0.29411764705882354;0.7928157686822895;1.0
+Does nintedanib hold promise for lung disease associated with systemic sclerosis?;0.0;0.6363636363636364;0.7887199782375025;1.0
+What is the LINCS Program?;0.2525714285714285;0.8571428571428571;0.9172509175420708;1.0
 Is PF-05190457 an inverse agonist of the ghrelin receptor?;1.0;1.0;1.0;1.0
-Is Ubrogepant effective for migraine?;0.050509259259259226;0.4;0.7549805379331994;0.5
-Is Selinexor effective for multiple myeloma?;0.1344444444444447;0.8333333333333334;1.0;1.0
-What is the protein product of the gene GBA2?;0.0;1.0;0.6791833733894799;1.0
+Is Ubrogepant effective for migraine?;0.0;0.4666666666666667;0.8476632111650622;0.5
+Is Selinexor effective for multiple myeloma?;0.10155753968253962;0.75;0.9799717291424871;1.0
+What is the protein product of the gene GBA2?;0.0;1.0;0.7398124665681314;1.0
 Are there lncRNAs that control the extent of neuronal outgrowth?;1.0;1.0;1.0;1.0
-Can the radiation of cellphones be dangerous?;0.5;0.5;0.5770196109771317;1.0
-Does metformin has as an antitumor effect?;0.0;0.25;0.3341683778748003;0.1111111111111111
-Can radiation induced meningiomas be treated with radiosurgery?;0.061875;0.5;0.6425204416869266;0.5
-What is known about ROS production in relation to UVR?;0.05444444444444433;1.0;0.9864454785297619;1.0
-Which drugs used in the treatment of Systemic Lupus Erythematosus are targeting granulocytes?;0.0;0.0;0.13496092359587394;0.07692307692307693
+Can the radiation of cellphones be dangerous?;0.5;1.0;0.6505149978319906;1.0
+Does metformin has as an antitumor effect?;0.25;0.5;0.5861174842111384;1.0
+Can radiation induced meningiomas be treated with radiosurgery?;0.0;0.75;0.8813585891295642;1.0
+What is known about ROS production in relation to UVR?;0.12799999999999995;1.0;1.0;1.0
+Which drugs used in the treatment of Systemic Lupus Erythematosus are targeting granulocytes?;0.0;0.3333333333333333;0.3434775810703913;0.5
 What is PWMScan?;1.0;1.0;1.0;1.0
-Is there a BRCA mutation analysis in the Greek population?;0.0;1.0;1.0;0.5
-What is the basis of the DamID experimental protocol?;0.0;0.6666666666666666;0.6815651234322407;1.0
-What is the function of the Spt6 gene in yeast?;0.0;0.5555555555555556;0.7676846468111173;1.0
+Is there a BRCA mutation analysis in the Greek population?;1.0;1.0;1.0;1.0
+What is the basis of the DamID experimental protocol?;0.0;0.8333333333333334;0.9641349378347632;1.0
+What is the function of the Spt6 gene in yeast?;0.05499999999999988;0.2222222222222222;0.771332341447704;1.0
 What has pimavanserin been approved for by the FDA (2018)?;0.0;1.0;0.6309297535714574;0.3333333333333333
 List the members of a network of noncoding regulatory RNAs that play a role in the mammalian brain;1.0;1.0;1.0;1.0
-Has ProSavin undergone phase IV clinical trials by 2018?;0.0;1.0;1.0;0.5
+Has ProSavin undergone phase IV clinical trials by 2018?;1.0;1.0;1.0;1.0
 List approved radioprotective compounds;1.0;1.0;1.0;1.0
-Does deletion of cohesin change gene expression?;0.0;1.0;0.6309297535714574;0.3333333333333333
+Does deletion of cohesin change gene expression?;1.0;1.0;1.0;1.0
 Do MAIT cells have a role in multiple myeloma?;0.995;1.0;1.0;1.0
 What is ProSavin?;0.0;1.0;1.0;1.0
 Are stretch enhancers transcribed more than super-enhancers?;1.0;1.0;1.0;1.0
 What is Q-SYMBIO?;1.0;1.0;1.0;1.0
-What is the function of the NIPBL factor in genome conformation?;0.308125;0.625;0.9214391647249405;1.0
-Is mesothelioma caused by asbestos exposure?;0.0;0.16666666666666666;0.4626309736905959;0.5
-Which diagnostic test is approved for coronavirus infection screening?;0.0;0.25;0.10646464774659967;0.125
+What is the function of the NIPBL factor in genome conformation?;0.17300000000000032;0.875;0.8467151295884466;1.0
+Is mesothelioma caused by asbestos exposure?;0.0;0.3333333333333333;0.6725005507326361;1.0
+Which diagnostic test is approved for coronavirus infection screening?;0.0;0.0;0.07271649848970553;0.047619047619047616
 What is Xanamem?;1.0;1.0;1.0;1.0
-Can nrf2 activation lead to resistance to radiotherapy?;0.0;0.5;0.5714164695892964;1.0
-Are there interactions between short and long noncoding RNAs?;0.0;1.0;1.0;0.5
-Which molecule is inhibited by encorafenib?;0.0;0.42105263157894735;0.9142851970087738;1.0
+Can nrf2 activation lead to resistance to radiotherapy?;0.0;0.75;0.6444675286963275;0.5
+Are there interactions between short and long noncoding RNAs?;1.0;1.0;1.0;1.0
+Which molecule is inhibited by encorafenib?;0.03640350877192978;0.47368421052631576;0.9805985981413234;1.0
 What is the basis of the capture Hi-C experimental protocol?;0.0;0.0;0.0;0.0
 What is the role of Scc2/Nipbl?;1.0;1.0;1.0;1.0
-What is the chromosomal location of the LDL receptor gene associated with autosomal dominant Familial Hypercholesterolemia?;0.4975;0.5;0.7905707169288229;1.0
-Can brain derived exosomes carry APP molecules?;0.25;0.75;0.9201515141900503;1.0
-List the most common cancers after a radiation exposure?;0.0;0.0;0.10177364751243725;0.03225806451612903
-Which are the main G1/S transcription factors in yeast?;0.19999999999999962;0.6;0.4779634622879169;1.0
-What is Hemochromatosis?;0.0;0.26666666666666666;0.5484739312390894;1.0
+What is the chromosomal location of the LDL receptor gene associated with autosomal dominant Familial Hypercholesterolemia?;0.0;0.5;0.5571250035448764;1.0
+Can brain derived exosomes carry APP molecules?;0.25;1.0;0.9778585125241057;1.0
+List the most common cancers after a radiation exposure?;0.0;0.16666666666666666;0.31808814198037527;0.5
+Which are the main G1/S transcription factors in yeast?;0.0;0.6;0.6701618871885437;1.0
+What is Hemochromatosis?;0.028460317460317394;0.3333333333333333;0.5612953725689108;1.0
 What molecules are the multidrug transporter MDR3 targeting?;0.0;0.0;0.0;0.0
 What is the role of the Hof1-Cyk3 interaction in yeast?;1.0;1.0;1.0;1.0
-List features of the SAM syndrome.;0.0;0.8333333333333334;0.6771594872621569;1.0
-What does the Smith–Waterman algorithm do?;0.0;1.0;0.7171809907403116;1.0
-Is SATB1 positioned close to AT-rich sequences?;0.08116666666666657;0.6;0.931968943914394;1.0
+List features of the SAM syndrome.;0.3316666666666663;0.8333333333333334;0.9020243604942442;1.0
+What does the Smith–Waterman algorithm do?;0.0;1.0;1.0;1.0
+Is SATB1 positioned close to AT-rich sequences?;0.0;0.8;0.9658557137581796;1.0
 Describe the Java Adverse Drug Event (JADE) tool;0.995;1.0;1.0;1.0
-Which drugs were tested in the CheckMate 227 clinical trial?;0.05444444444444433;0.6666666666666666;0.7753926834409676;1.0
-What is known about PAI-1 in longevity in humans?;0.5511111111111121;0.6666666666666666;0.7078516498599609;1.0
-Does metformin alleviate atherosclerosis?;0.0;0.3333333333333333;0.6913173747942043;0.5
-List side effects of radiation therapy?;0.0;0.4;0.3807852604803161;0.5
-Are CD8+ (cytotoxic) T cells and  CD4+ Helper T cells generated in the thyroid and express the T-cell receptor?;0.0;0.4444444444444444;0.5942188257174501;1.0
-What bacteria is associated with Gastric cancer and peptic ulcers?;0.0;0.125;0.471616902575559;0.5
-Is Huntington's disease is caused by expansion of a CTG repeat in the HTT gene on Chromosome 4?;0.0;0.2608695652173913;0.7853750347590467;1.0
-What is the purpose of the 123 dihydrorhodamine assay?;0.0;0.125;0.36639270865194323;0.25
-What is the mode of action of filgotinib?;0.04318181818181818;0.8181818181818182;0.9567274901178995;1.0
-Is Huntington's disease caused by a dominate or recessive gene?;0.0;0.1;0.339376668154594;0.2
+Which drugs were tested in the CheckMate 227 clinical trial?;0.08249999999999989;0.6666666666666666;0.7422329748991159;1.0
+What is known about PAI-1 in longevity in humans?;0.3333333333333329;1.0;1.0;1.0
+Does metformin alleviate atherosclerosis?;0.0;0.5555555555555556;0.8284642528206253;1.0
+List side effects of radiation therapy?;0.0;0.4;0.24900360388932713;0.25
+Are CD8+ (cytotoxic) T cells and  CD4+ Helper T cells generated in the thyroid and express the T-cell receptor?;0.0;0.2222222222222222;0.33518389183395586;0.125
+What bacteria is associated with Gastric cancer and peptic ulcers?;0.016785714285714272;0.5;0.5396537289765547;0.5
+Is Huntington's disease is caused by expansion of a CTG repeat in the HTT gene on Chromosome 4?;0.0;0.30434782608695654;0.7919198086081335;1.0
+What is the purpose of the 123 dihydrorhodamine assay?;0.125;0.125;0.47766035917516053;1.0
+What is the mode of action of filgotinib?;0.0;0.8181818181818182;0.8699288651255744;0.5
+Is Huntington's disease caused by a dominate or recessive gene?;0.0;0.2;0.485365929621769;0.5
 What is RiboTag profiling?;0.0;1.0;1.0;0.5
 Is there an increased risk of meningiomas in atomic bomb survivors?;0.0;1.0;1.0;1.0
 What is foliglurax?;1.0;1.0;1.0;1.0
-What is the genetic basis for Cornelia de Lange's syndrome?;0.0;1.0;0.30102999566398114;0.1
+What is the genetic basis for Cornelia de Lange's syndrome?;0.0;1.0;1.0;0.5

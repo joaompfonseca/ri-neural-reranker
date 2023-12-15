@@ -224,7 +224,7 @@ class Evaluator:
 
 
 if __name__ == "__main__":
-    # Evaluate BM25 results
+    # Evaluate BM25_E8B1 results
     e = Evaluator(
         "data/question_E8B1_gs.jsonl",
         "data/BM25_E8B1.jsonl",
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     )
     e.evaluate()
 
-    # Evaluate rerank results
+    # Evaluate BM25_E8B1_rerank results
     e = Evaluator(
         "data/question_E8B1_gs.jsonl",
         "data/BM25_E8B1_rerank.jsonl",
